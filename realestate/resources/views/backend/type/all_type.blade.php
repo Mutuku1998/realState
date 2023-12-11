@@ -40,11 +40,11 @@
             <td>{{$item->type_icon}}</td>
             <td>
 
-      <a href="" class="btn btn-inverse-warning">      
+      <a href="{{route('edit.type',$item->id)}}" class="btn btn-inverse-warning">      
 Edit
     </a>      
     
-    <a href="" class="btn btn-inverse-danger">      
+    <a href="{{route('delete.type',$item->id)}}" class="btn btn-inverse-danger" id="delete">      
         Delete
     </a>
             </td>

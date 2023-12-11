@@ -83,6 +83,13 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
         Route::post('/add/store', 'StoreType')->name('store.type');
 
+        Route::get('/add/edit/{id}', 'EditType')->name('edit.type');
+
+        
+        Route::post('/update/store', 'UpdateType')->name('update.type');
+
+        Route::get('/delete/store/{id}', 'DeleteType')->name('delete.type');
+
     });
 
 

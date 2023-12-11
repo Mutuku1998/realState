@@ -44,9 +44,51 @@ public function StoreType(Request $request){
     );
     
     return redirect()-> route('all.type')->with($notificaion);
-    
-    
 
 }
+
+public function EditType ($id) {
+
+    $types = PropertyType::findOrFail($id);
+    return view('backend.type.edit_type',compact('types'));
+
+}
+
+
+public function UpdateType(Request $request){
+
+
+    $pid= $request->id;
+
+    PropertyType::findOrFail($pid)->update([
+
+
+        'type_name'=> $request->type_name,
+        'type_icon'=> $request->type_icon
+
+    ]);
+    $notificaion = array(
+        'message' => 'property updated successfully',
+        'alert-type' => 'success'
+    );
+    
+    return redirect()-> route('all.type')->with($notificaion);
+
+}
+
+public function DeleteType ($id){
+
+    PropertyType::findOrFail($id)->delete();
+
+
+    $notificaion = array(
+        'message' => 'property deleted successfully',
+        'alert-type' => 'success'
+    );
+    
+    return redirect()-> back()->with($notificaion);
+
+}
+
 
 }
