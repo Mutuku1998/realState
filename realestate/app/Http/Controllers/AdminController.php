@@ -77,7 +77,7 @@ class AdminController extends Controller
         $profileData = User::find($id);
 
 
-        return  view('admin.admin_change_password',compact('$profileData'));
+        return  view('admin.admin_change_password',compact('profileData'));
     }
     
 }

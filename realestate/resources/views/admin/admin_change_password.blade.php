@@ -59,7 +59,7 @@
             <div class="card">
                   <div class="card-body">
     
-                                    <h6 class="card-title"> Update Admin Profile</h6>
+                                    <h6 class="card-title">Change Password</h6>
     
                                     <form method="POST" action="{{route('admin.profile.store')}}" class="forms-sample"
                                     enctype="multipart/form-data">
