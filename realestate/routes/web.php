@@ -36,6 +36,8 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+
+// admin middleware
 Route::middleware(['auth','role:admin'])->group(function(){
 
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
@@ -48,6 +50,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     
     Route::get('/admin/change/password', [AdminController::class, 'AdminChangePassword'])->name('admin.change.password');
+
+    
+    Route::post('/admin/update/password', [AdminController::class, 'AdminUpdatePassword'])->name('admin.update.password');
 
 });
 
