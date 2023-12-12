@@ -113,6 +113,7 @@
 
 <script src="{{asset('backend/assets/js/data-table.js')}}"></script>
 <script src="{{asset('backend/assets/js/code/code.js')}}"></script>
+<script src="{{asset('backend/assets/js/code/validate.min.js')}}"></script>
 
 </body>
 </html>    

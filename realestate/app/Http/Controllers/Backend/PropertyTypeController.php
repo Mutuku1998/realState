@@ -102,4 +102,24 @@ public function AllAmenitie() {
 public function AddAmenitie () {
     return view ('backend.amenities.add_amenitie');
 }
+
+
+public function StoreAmenitie(Request $request){
+
+
+
+    Amenities::insert([
+
+        'amenities_name'=> $request->amenities_name
+        
+    ]);
+    $notificaion = array(
+        'message' => 'Amenitie created successfully',
+        'alert-type' => 'success'
+    );
+    
+    return redirect()-> route('all.amenitie')->with($notificaion);
+
+}
+
 }
