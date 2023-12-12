@@ -39,7 +39,7 @@
             <td>{{$item->amenities_name}}</td>
             <td>
 
-      <a href="{{route('edit.type',$item->id)}}" class="btn btn-inverse-warning">      
+      <a href="{{route('edit.amenitie',$item->id)}}" class="btn btn-inverse-warning">      
 Edit
     </a>      
     

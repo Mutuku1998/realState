@@ -119,6 +119,12 @@ public function StoreAmenitie(Request $request){
     );
     
     return redirect()-> route('all.amenitie')->with($notificaion);
+}
+
+public function EditAmenitie ($id) {
+
+    $amenities = Amenities::findOrFail($id);
+    return view('backend.amenities.edit_amenitie',compact('amenities'));
 
 }
 
