@@ -19,9 +19,11 @@
     
                                     <h6 class="card-title">Add Permission</h6>
     
-                                    <form  id="myform"  method="POST" action="{{route('store.permission')}}" class="forms-sample">
+                                    <form  id="myform"  method="POST" action="{{route('update.permission')}}" class="forms-sample">
 
                                         @csrf
+
+                                        <input type="hidden" name="id" value="{{$permissions->id}}">
                                      
                                           <div class="form-group mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Permission Name</label>

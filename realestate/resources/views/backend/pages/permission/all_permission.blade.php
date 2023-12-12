@@ -42,7 +42,7 @@
 Edit
     </a>      
     
-    <a href="{{route('delete.amenitie',$item->id)}}" class="btn btn-inverse-danger" id="delete">      
+    <a href="{{route('delete.permission',$item->id)}}" class="btn btn-inverse-danger" id="delete">      
         Delete
     </a>
             </td>

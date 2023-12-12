@@ -46,4 +46,36 @@ public function EditPermission ($id) {
     return view ('backend.pages.permission.edit_permission',compact('permissions'));
 
 }
+
+public function UpdatePermission (Request $request) {
+
+    $per_id = $request->id;
+
+    Permission::findOrFail($per_id)->update([
+        'name' => $request->name,
+        'group_name' => $request->group_name,
+    ]);
+
+    $notification = array(
+        'message'=>'permission updated successfully',
+        'alert_type' => 'success'
+    );
+    return redirect()->route('all.permission')->with($notification);
+}
+ 
+public function DeletePermission ($id) {
+
+    Permission::findOrFail($id)->delete();
+
+    $notification = array(
+        'message' => 'permission deleted successfully',
+        'alert_type' =>'success'
+    );
+    return redirect()->back()->with($notification);
+
+
+}
+
+
+
 }
