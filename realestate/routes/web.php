@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\Backend\PropertyTypeController;
+use App\Http\Controllers\Backend\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,6 +108,24 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
     });
     
+
+    
+    Route::controller(RoleController::class)->group(function(){
+
+        Route::get('/all/permissions', 'AllPermission')->name('all.permission');
+        
+        Route::get('/add/permission', 'AddPermission')->name('add.permission');
+
+        Route::post('/permission/store', 'StorePermission')->name('store.permission');
+
+        Route::get('/add/edit/{id}', 'EditType')->name('edit.type');
+
+        
+        Route::post('/update/store', 'UpdateType')->name('update.type');
+
+        Route::get('/delete/store/{id}', 'DeleteType')->name('delete.type');
+
+    });
 
 
 });
