@@ -39,4 +39,11 @@ public function StorePermission (Request $request) {
 
 }
 
+public function EditPermission ($id) {
+
+    $permissions = Permission::findOrFail($id);
+    
+    return view ('backend.pages.permission.edit_permission',compact('permissions'));
+
+}
 }

@@ -72,14 +72,14 @@
             $(document).ready(function (){
                 $('#myForm').validate({
                     rules: {
-                        amenities_name: {
+                    name: {
                             required : true,
                         }, 
                         
                     },
                     messages :{
-                        amenities_name: {
-                            required : 'Please amenities name',
+                    name: {
+                            required : 'Please permission name',
                         }, 
                          
         

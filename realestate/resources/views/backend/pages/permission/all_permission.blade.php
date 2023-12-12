@@ -38,7 +38,7 @@
             <td>{{$item->group_name}}</td>
             <td>
 
-      <a href="{{route('edit.amenitie',$item->id)}}" class="btn btn-inverse-warning">      
+      <a href="{{route('edit.permission',$item->id)}}" class="btn btn-inverse-warning">      
 Edit
     </a>      
     
