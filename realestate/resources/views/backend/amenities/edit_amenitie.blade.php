@@ -19,9 +19,11 @@
     
                                     <h6 class="card-title">Update Amenities</h6>
     
-                                    <form  id="myform"  method="POST" action="{{route('store.amenitie')}}" class="forms-sample">
+                                    <form  id="myform"  method="POST" action="{{route('update.amenitie')}}" class="forms-sample">
 
                                         @csrf
+
+                                        <input type="hidden" name="id" value="{{$amenities->id}}">
                                      
                                           <div class="form-group mb-3">
                                             <label for="exampleInputEmail1" class="form-label">Amenities Name</label>

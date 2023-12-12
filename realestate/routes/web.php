@@ -101,7 +101,9 @@ Route::middleware(['auth','role:admin'])->group(function(){
         Route::get('/add/amenitie', 'AddAmenitie')->name('add.amenitie');
         Route::post('/store/amenitie', 'StoreAmenitie')->name('store.amenitie');
         Route::get('/edit/amenitie/{id}', 'EditAmenitie')->name('edit.amenitie');
-    
+        Route::post('/update/amenitie', 'UpdateAmenitie')->name('update.amenitie');
+        
+        Route::get('/delete/amenitie/{id}', 'DeleteAmenitie')->name('delete.amenitie');
 
     });
     
