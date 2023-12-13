@@ -92,4 +92,63 @@ public function AllRoles () {
 
 }
 
+public function AddRoles (){
+
+    return view('backend.pages.role.add_role');
+
+}
+
+public function StoreRole (Request $request) {
+
+    $role= Role::create([
+        'name' => $request->name,
+
+    ]);
+
+    $notification = array(
+        'message' => 'Role created successfuly',
+        'alert_type' =>'success'
+    );
+
+    return redirect()->route('all.roles')->with($notification);
+
+}
+
+public function EditRole ($id) {
+
+$roles = Role::findOrFail($id);
+
+return view ('backend.pages.role.edit_roles',compact('roles'));
+}
+
+public function UpdateRole (Request $request) {
+
+$role_id = $request->id;
+Role::findOrFail($role_id)->update([
+
+    'name' => $request->name
+]);
+ 
+
+    $notification = array(
+        'message' => 'Role updated successfuly',
+        'alert_type' =>'success'
+    );
+
+    return redirect()->route('all.roles')->with($notification);
+
+}
+
+public function DeleteRole ($id){
+
+    Role::findOrFail($id)->delete();
+
+    $notification = array(
+        'message' => 'role deleted successfully',
+        'alert_type' =>'success'
+    );
+    return redirect()->back()->with($notification);
+
+}
+
 }

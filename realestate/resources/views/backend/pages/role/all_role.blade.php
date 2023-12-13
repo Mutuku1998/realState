@@ -6,7 +6,7 @@
 
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
-            <a href="{{route('add.permission')}}" class="btn btn-inverse-info">      
+            <a href="{{route('add.roles')}}" class="btn btn-inverse-info">      
             Add Role
              </a> 
            
@@ -38,11 +38,11 @@
          >
             <td>
 
-      <a href="{{route('edit.permission',$item->id)}}" class="btn btn-inverse-warning">      
+      <a href="{{route('edit.role',$item->id)}}" class="btn btn-inverse-warning">      
 Edit
     </a>      
     
-    <a href="{{route('delete.permission',$item->id)}}" class="btn btn-inverse-danger" id="delete">      
+    <a href="{{route('delete.role',$item->id)}}" class="btn btn-inverse-danger" id="delete">      
         Delete
     </a>
             </td>
