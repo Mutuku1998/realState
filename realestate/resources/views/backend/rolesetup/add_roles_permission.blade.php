@@ -42,8 +42,8 @@
 
                                           <div class="form-check mb-2">
 
-                                            <input type="checkbox" class="form-check-input " id="checkDefault">
-                                        <label class="form-check-label" for="checkDefault">
+                                            <input type="checkbox" class="form-check-input " id="checkDefaultmain">
+                                        <label class="form-check-label" for="checkDefaultmain">
 
                                         Permission All 
                                         </label>
@@ -69,16 +69,24 @@
 
                                           <div class="col-9"> 
 
+                                            @php
+                                            $permissions = App\Models\User::getpermissionByGroupName($group->group_name)
+                                                
+                                            @endphp
+
+                                            @foreach($permissions as $permission)
                                             <div class="form-check mb-2">
 
-                                                <input type="checkbox" class="form-check-input " id="checkDefault">
-                                            <label class="form-check-label" for="checkDefault">
+                                                <input type="checkbox" class="form-check-input" name="permission" id="checkDefault   {{$permission->name}}"
+                                                value="{{$permission->id}}">
+                                            <label class="form-check-label" for="checkDefault {{$permission->id}}">
     
-                                            Permission All 
+                                        {{$permission->name}}
                                             </label>
                                               </div>
     
-
+                                            @endforeach
+                                            <br>
                                           </div>
 
                                           </div>
@@ -98,6 +106,17 @@
     </div>
 
         </div>
+        
+<script type="text/javascript">
+$('#checkDefaultmain').click(function(){
+    if ($(this).is(':checked')){
+        $('input[type=checkbox]').prop('checked', true)
+    }
+    else
+    $('input[type=checkbox]').prop('checked', false)
+});
+
+</script>
 
         @endsection
 
