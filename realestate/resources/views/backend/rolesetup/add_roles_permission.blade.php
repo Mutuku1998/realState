@@ -4,7 +4,12 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style type="text/css">
 
+.form-check-label{
+    text-transform: capitalize;
+}
+    </style>
 <div class="page-content">
 
     <div class="row profile-body">
@@ -19,7 +24,7 @@
     
                                     <h6 class="card-title">Add Roles in Permission</h6>
     
-                                    <form  id="myform"  method="POST" action="{{route('store.role')}}" class="forms-sample">
+                                    <form  id="myform"  method="POST" action="{{route('role.permission.store')}}" class="forms-sample">
 
                                         @csrf
                                      
