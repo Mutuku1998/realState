@@ -151,7 +151,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 
 
-        Route::get('/add/roles/permission', 'AllRolesPermission')->name('add.roles.permission');
+        Route::get('/add/roles/permission', 'AddRolesPermission')->name('add.roles.permission');
         
     });
 

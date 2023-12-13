@@ -151,4 +151,15 @@ public function DeleteRole ($id){
 
 }
 
+
+// add Roles and permission
+
+public function  AddRolesPermission(){
+
+    $roles = Role::all();
+    $permissions = Permission::all(); 
+
+    return view('backend.rolesetup.add_roles_permission',compact('roles','permissions'));
+}
+
 }
