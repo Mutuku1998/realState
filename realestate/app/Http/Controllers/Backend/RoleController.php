@@ -169,7 +169,6 @@ public function RolePermissionStore(Request $request)
     $data = array();
     $permissions = $request->permission;
 
-    // Convert the comma-separated string to an array
     $permissionsArray = explode(',', $permissions);
 
     foreach ($permissionsArray as $key => $item) {
@@ -184,7 +183,14 @@ public function RolePermissionStore(Request $request)
         'alert_type' => 'success'
     );
 
-    return redirect()->back()->with($notification);
+    return redirect()->route('all.roles.permission')->with($notification);
 }
+
+public function AllRolesPermission(){
+    $roles = Role::all();
+    return view('backend.rolesetup.all_roles_permission',compact('roles'));
+}
+
+
 
 }
