@@ -7,17 +7,9 @@
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
             <a href="{{route('add.permission')}}" class="btn btn-inverse-info">      
-            Add Permission
+            Add Role
              </a> 
-             &nbsp;&nbsp;&nbsp;
-             <a href="{{route('import.permission')}}" class="btn btn-inverse-warning">      
-             import
-               </a>  
-               &nbsp;&nbsp;&nbsp;
-               <a href="" class="btn btn-inverse-danger">      
-                export
-                 </a>   
-                 &nbsp;&nbsp;&nbsp;
+           
         </ol>
     </nav>
 
@@ -25,26 +17,25 @@
         <div class="col-md-12 grid-margin stretch-card">
 <div class="card">
   <div class="card-body">
-    <h6 class="card-title">All Permissions</h6>
+    <h6 class="card-title">Roles</h6>
      <div class="table-responsive">
       <table id="dataTableExample" class="table">
         <thead>
           <tr>
             <th>SI</th>
-            <th>Permission Name</th>
-            <th>Group Name</th>
+            <th>Role Name</th>
             <th>Action</th>
         
           </tr>
         </thead>
         <tbody>
 
-            @foreach ($permissions as $key => $item)
+            @foreach ($roles as $key => $item)
 
           <tr>
             <td>{{$key+1}}</td>
             <td>{{$item->name}}</td>
-            <td>{{$item->group_name}}</td>
+         >
             <td>
 
       <a href="{{route('edit.permission',$item->id)}}" class="btn btn-inverse-warning">      

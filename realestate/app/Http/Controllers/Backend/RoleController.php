@@ -76,6 +76,20 @@ public function DeletePermission ($id) {
 
 }
 
+public function ImportPermission () {
 
+    return view('backend.pages.permission.import_permission');
+}
+
+
+// roles 
+
+public function AllRoles () {
+
+    $roles = Role::all();
+
+    return view('backend.pages.role.all_role',compact('roles'));
+
+}
 
 }
