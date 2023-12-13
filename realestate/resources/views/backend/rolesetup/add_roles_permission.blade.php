@@ -45,7 +45,7 @@
                                             <input type="checkbox" class="form-check-input " id="checkDefault">
                                         <label class="form-check-label" for="checkDefault">
 
-Permission All 
+                                        Permission All 
                                         </label>
                                           </div>
 
