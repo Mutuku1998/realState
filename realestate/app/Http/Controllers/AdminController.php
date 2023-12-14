@@ -132,6 +132,31 @@ public function AddAdmin(){
     $roles = Role::all();
     return view('backend.pages.admin.add_admin',compact('roles'));
 }
+public function StoreAdmin (Request $request) {
+    $user = new User();
+    $user->username = $request->username;
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->phone = $request->phone;
+    $user->address = $request->address;
+    $user->password = Hash::make($request->password);
+    $user->role ='admin';
+    $user->save();
+
+    if($request->roles) {
+        $user->assignRole($request->role);
+    }
+
+    
+    $notificaion = array(
+        'message' => 'admin added successfully',
+        'alert-type' => 'success'
+    );
+    
+    return redirect()->route('all.admin')->with($notificaion);
+    
+
+}
 
 
 }
