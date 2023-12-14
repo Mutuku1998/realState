@@ -49,7 +49,7 @@
     
             <td>
 
-      <a href="{{route('edit.role',$item->id)}}" class="btn btn-inverse-warning">      
+      <a href="{{route('admin.edit.roles',$item->id)}}" class="btn btn-inverse-warning">      
 Edit
     </a>      
     

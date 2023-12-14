@@ -192,5 +192,31 @@ public function AllRolesPermission(){
 }
 
 
+public function AdminEditRoles($id){
+ 
+    $role = Role::findOrFail($id);
+    $permissions = Permission::all(); 
+    $permission_groups = User::getpermissionGroups();
+
+    return view('backend.rolesetup.edit_roles_permission',compact('role','permissions','permission_groups'));
+
+}
+
+public function AdminUpdateRoles (){
+    $role = Role::findOrFail(Request $request);
+
+    $permissions = $request->permission;
+    
+    if(!empty($permissions)){
+        $role->syncPermissions($permissions);
+    }
+
+    $notification = array(
+        'message' => 'Role Permission updated successfully',
+        'alert_type' => 'success'
+    );
+
+    return redirect()->route('all.roles.permission')->with($notification);
+}
 
 }
