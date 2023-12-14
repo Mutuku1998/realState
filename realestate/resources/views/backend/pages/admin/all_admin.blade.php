@@ -41,9 +41,14 @@
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->email}}</td>
                                     <td>{{$item->phone}}</td>
-                                    <td>Role</td>
                                     <td>
-                                        <a href="" class="btn btn-inverse-warning" title="Edit"><i data-feather="edit"></i></a>
+                                        @foreach($item->roles as $role)
+                                            <span class="badge badge-pill bg-danger">{{$role->name}}</span>
+                                        @endforeach
+                                    </td>
+                                    
+                                    <td>
+                                        <a href="{{route('edit.admin')}}" class="btn btn-inverse-warning" title="Edit"><i data-feather="edit"></i></a>
                                         <a href="" class="btn btn-warning" title="delete" id="delete"><i data-feather="delete"></i></a>
                                     </td>
                                 </tr>

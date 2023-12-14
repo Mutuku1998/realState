@@ -149,14 +149,23 @@ public function StoreAdmin (Request $request) {
 
     
     $notificaion = array(
-        'message' => 'admin added successfully',
+        'message' => 'New admin inserted successfuly successfully',
         'alert-type' => 'success'
     );
     
     return redirect()->route('all.admin')->with($notificaion);
-    
 
 }
+
+
+public function EditAdmin($id) {
+
+    $user = User::findorFail($id);
+    $roles = Role::all();
+
+    return view('backend.pages.admin.edit_admin',compact('user','roles'));
+}
+
 
 
 }

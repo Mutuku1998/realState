@@ -176,6 +176,8 @@ Route::get('/add/admin', 'AddAdmin')->name('add.admin');
 
 Route::post('/store/admin', 'StoreAdmin')->name('store.admin');
 
+Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
+
 });
 
 
