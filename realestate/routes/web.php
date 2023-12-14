@@ -161,11 +161,20 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
         
         Route::post('/admin/role/update/{id}', 'AdminUpdateRoles')->name('admin.roles.update');
+
+        Route::get('/admin/delete/roles/{id}', 'AdminDeleteRoles')->name('admin.delete.roles');
         
     });
 
+    // admin user routes
 
-    
+Route::controller(AdminController::class)->group(function(){
+
+Route::get('/all/admin', 'AllAdmin')->name('all.admin');
+
+
+});
+
 
 
 });

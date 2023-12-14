@@ -53,7 +53,7 @@
 Edit
     </a>      
     
-    <a href="{{route('delete.role',$item->id)}}" class="btn btn-inverse-danger" id="delete">      
+    <a href="{{route('admin.delete.roles',$item->id)}}" class="btn btn-inverse-danger" id="delete">      
         Delete
     </a>
             </td>

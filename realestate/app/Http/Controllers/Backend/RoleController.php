@@ -202,8 +202,8 @@ public function AdminEditRoles($id){
 
 }
 
-public function AdminUpdateRoles (){
-    $role = Role::findOrFail(Request $request);
+public function AdminUpdateRoles (Request $request ,$id){
+    $role = Role::findOrFail($id);
 
     $permissions = $request->permission;
     
@@ -217,6 +217,21 @@ public function AdminUpdateRoles (){
     );
 
     return redirect()->route('all.roles.permission')->with($notification);
+}
+
+public function AdminDeleteRoles ($id){
+
+    $role = Role::findOrFail($id);
+    
+    if(!is_null($role)){
+        $role->delete();
+    }
+    $notification = array(
+        'message' => 'role in permission deleted successfully',
+        'alert_type' =>'success'
+    );
+    return redirect()->back()->with($notification);
+
 }
 
 }

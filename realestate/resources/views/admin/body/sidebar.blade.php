@@ -175,6 +175,26 @@
           </div>
         </li>
    
+
+
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="collapse" href="#admin" role="button" aria-expanded="false" aria-controls="admin">
+            <i class="link-icon" data-feather="anchor"></i>
+            <span class="link-title">Manage Admin User</span>
+            <i class="link-arrow" data-feather="chevron-down"></i>
+          </a>
+          <div class="collapse" id="advancedUI">
+            <ul class="nav sub-menu">
+              <li class="nav-item">
+                <a href="{{route('all.admin')}}" class="nav-link">All Admin</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{route('all.roles')}}" class="nav-link">All Admin</a>
+              </li>
+          
+            </ul>
+          </div>
+        </li>
   
   
   

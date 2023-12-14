@@ -119,5 +119,12 @@ return back()->with($notificaion);
 
 
 }
+//all admin user method
+
+public function AllAdmin(){
+    $alladmin = User::where('role','admin')->get();
+
+    return view('backend.pages.admin.all_admin',compact('alladmin'));
+}
     
 }
