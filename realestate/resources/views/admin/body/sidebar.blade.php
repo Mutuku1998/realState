@@ -19,6 +19,7 @@
           </a>
         </li>
         <li class="nav-item nav-category">Real estate</li>
+
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
             <i class="link-icon" data-feather="mail"></i>
@@ -37,6 +38,8 @@
             </ul>
           </div>
         </li>
+
+        
 
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="amenities" role="button" aria-expanded="false" aria-controls="emails">

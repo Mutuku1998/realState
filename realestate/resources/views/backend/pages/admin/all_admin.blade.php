@@ -48,8 +48,8 @@
                                     </td>
                                     
                                     <td>
-                                        <a href="{{route('edit.admin')}}" class="btn btn-inverse-warning" title="Edit"><i data-feather="edit"></i></a>
-                                        <a href="" class="btn btn-warning" title="delete" id="delete"><i data-feather="delete"></i></a>
+                                        <a href="{{route('edit.admin',$item->id)}}" class="btn btn-inverse-warning" title="Edit"><i data-feather="edit"></i></a>
+                                        <a href="{{route('delete.admin',$item->id)}}" class="btn btn-warning" title="delete" id="delete"><i data-feather="delete"></i></a>
                                     </td>
                                 </tr>
                                 @endforeach

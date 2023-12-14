@@ -178,6 +178,9 @@ Route::post('/store/admin', 'StoreAdmin')->name('store.admin');
 
 Route::get('/edit/admin/{id}', 'EditAdmin')->name('edit.admin');
 
+Route::post('/update/admin/{id}', 'UpdateAdmin')->name('update.admin');
+Route::get('/delete/admin/{id}', 'DeleteAdmin')->name('delete.admin');
+
 });
 
 

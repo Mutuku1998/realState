@@ -166,6 +166,52 @@ public function EditAdmin($id) {
     return view('backend.pages.admin.edit_admin',compact('user','roles'));
 }
 
+public function UpdateAdmin(Request $request, $id)
+{
+    $user = User::findOrFail($id);
+
+    // Check if the email is being changed and if it already exists for another user
+    if ($request->email != $user->email) {
+        $request->validate([
+            'email' => 'unique:users,email',
+        ]);
+    }
+
+    $user->username = $request->username;
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->phone = $request->phone;
+    $user->address = $request->address;
+    $user->role = 'admin';
+    $user->save();
+
+    $user->roles()->detach();
+    if ($request->roles) {
+        $user->assignRole($request->role);
+    }
+
+    $notification = array(
+        'message' => 'Admin updated successfully',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->route('all.admin')->with($notification);
+}
+
+public function DeleteAdmin ($id) {
+
+    $user = User::findOrFail($id);
+    if(!is_null($user)){
+        $user->delete();
+    }
+    $notification = array(
+        'message' => 'Admin deleted successfully',
+        'alert-type' => 'success'
+    );
+
+    return redirect()->route('all.admin')->with($notification);
+    
+}
 
 
 }

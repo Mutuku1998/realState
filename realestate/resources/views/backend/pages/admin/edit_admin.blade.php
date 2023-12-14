@@ -18,7 +18,7 @@
                     <div class="card-body">
                         <h6 class="card-title">Edit Admin</h6>
 
-                        <form id="myForm" method="POST" action="{{route('store.admin')}}" class="form-sample">
+                        <form id="myForm" method="POST" action="{{route('update.admin',$user->id)}}" class="form-sample">
                             @csrf
 
                             <div class="form-group mb-3">
@@ -60,7 +60,7 @@
                                 <input type="text" name="address" class="form-control" value="{{$user->address}}">
 
                             </div>
-                     
+                
                             <div class="form-group mb-3">
                                 <label for="exampleInputEmail" class="form-label">
                                    Role Name
@@ -72,7 +72,7 @@
 
                                         @foreach ($roles as $role)
 
-                                   <option value="{{$role->id}}">{{$role->name}}</option>
+                                   <option value="{{$role->id}}" {{$user->hasRole($role->name) ? 'selected': ''}}>{{$role->name}}</option>
 
                                    @endforeach
 
