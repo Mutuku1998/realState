@@ -9,7 +9,7 @@
 <div class="page-content">
     <nav class="page_breadcrumb">
         <ol class="breadcrumb">
-            <a href="" class="btn btn-inverse-info">Add admin</a>
+            <a href="{{route('add.admin')}}" class="btn btn-inverse-info">Add admin</a>
         </ol>
     </nav>
 
