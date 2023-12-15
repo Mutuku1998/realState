@@ -19,6 +19,7 @@
           </a>
         </li>
         <li class="nav-item nav-category">Real estate</li>
+        
 
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button" aria-expanded="false" aria-controls="emails">
@@ -28,18 +29,19 @@
           </a>
           <div class="collapse" id="emails">
             <ul class="nav sub-menu">
+           
               <li class="nav-item">
                 <a href="{{route('all.type')}}" class="nav-link"> All Types</a>
               </li>
+
               <li class="nav-item">
-              <a href="" class="nav-link">Add Type</a>
+              <a href="{{route('add.type')}}" class="nav-link">Add Type</a>
               </li>
-    
             </ul>
           </div>
         </li>
 
-        
+      
 
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="collapse" href="amenities" role="button" aria-expanded="false" aria-controls="emails">
