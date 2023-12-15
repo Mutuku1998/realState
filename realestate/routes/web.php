@@ -40,7 +40,7 @@ require __DIR__.'/auth.php';
 
 
 // admin middleware
-Route::middleware(['auth','role:admin'])->group(function(){
+Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
 
@@ -60,7 +60,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
 
 
 
-Route::middleware(['auth','role:agent'])->group(function(){
+Route::middleware(['auth','roles:agent'])->group(function(){
 
     Route::get('/agent/dashboard', [AgentController::class, 'AgentDashboard'])->name('agent.dashboard');
 
@@ -74,7 +74,7 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
 
 //allpropertytype routes
 
-Route::middleware(['auth','role:admin'])->group(function(){
+Route::middleware(['auth','roles:admin'])->group(function(){
 
     Route::controller(PropertyTypeController::class)->group(function(){
 
