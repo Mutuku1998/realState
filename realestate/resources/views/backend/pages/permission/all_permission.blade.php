@@ -14,7 +14,7 @@
              import
                </a>  
                &nbsp;&nbsp;&nbsp;
-               <a href="" class="btn btn-inverse-danger">      
+               <a href="{{route('export')}}" class="btn btn-inverse-danger">      
                 export
                  </a>   
                  &nbsp;&nbsp;&nbsp;

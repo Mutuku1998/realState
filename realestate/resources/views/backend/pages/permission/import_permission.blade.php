@@ -29,7 +29,8 @@ Download XLsx
     
                                     <h6 class="card-title">Import Permission</h6>
     
-                                    <form  id="myform"  method="POST" action="{{route('store.permission')}}" class="forms-sample">
+                                    <form  id="myform"  method="POST" action="{{route('import')}}" class="forms-sample"
+                                    enctype="multipart/form-data">
 
                                         @csrf
                                      
