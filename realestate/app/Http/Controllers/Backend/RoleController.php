@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Permission;
+use App\Exports\PermissionExport;
 use App\Models\User;
 use DB;
 class RoleController extends Controller
