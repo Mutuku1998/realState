@@ -9,7 +9,7 @@
 
     <nav class="page_breadcrumb">
 <ol class="breadcrumb">
-    <a href="#" class="btn btn-inverse-warning">
+    <a href="{{route('export')}}" class="btn btn-inverse-warning">
 Download XLsx
     </a>
 
@@ -41,7 +41,7 @@ Download XLsx
 
                                         
                                      
-                                        <button type="submit" class="btn btn-warning me-2">upload</button>
+                                        <button type="submit" class="btn btn-inverse-warning me-2">upload</button>
                                        
                                         </form>
                   </div>

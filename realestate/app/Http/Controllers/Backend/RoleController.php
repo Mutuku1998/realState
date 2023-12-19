@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
+use Maatwebsite\Excel\Facades\Excel;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
 use DB;
@@ -76,10 +77,19 @@ public function DeletePermission ($id) {
 
 
 }
+//import permission
 
 public function ImportPermission () {
 
     return view('backend.pages.permission.import_permission');
+
+}
+
+//export
+
+public function Export(){
+
+    return Excel::download(new PermissionExport, 'permission.xlsx');
 }
 
 
@@ -231,7 +241,6 @@ public function AdminDeleteRoles ($id){
         'alert_type' =>'success'
     );
     return redirect()->back()->with($notification);
-
+}
 }
 
-}
